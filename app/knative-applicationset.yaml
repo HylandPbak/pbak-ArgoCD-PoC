@@ -29,9 +29,9 @@ spec:
           color: {.color}
           name: {.name}
 
-      destination:
-        server: 'https://kubernetes.default.svc' # or put In-cluster
-        namespace: pbak
+    destination:
+      server: 'https://kubernetes.default.svc' # or put In-cluster
+      namespace: pbak
 
 
 
