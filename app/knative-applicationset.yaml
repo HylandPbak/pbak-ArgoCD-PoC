@@ -1,0 +1,37 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: colours
+spec:
+  goTemplate: true
+  goTemplateOptions: ["missingkey=error"]
+  generators:
+  - list:
+      elements:
+      - name: red
+        color: '#FF0000'
+      - name: blue
+        color: '#0000FF'
+      - name: green
+        color: '#00FF00'
+  template:
+    metadata:
+      name: '{{.name}}-color'
+    spec:
+      project: default
+    source:
+      repoURL: https://github.com/HylandPbak/pbak-ArgoCD-PoC.git
+      targetRevision: HEAD
+      path: "colorChart"
+      helm:
+        values: |
+          color: {.color}
+          name: {.name}
+
+      destination:
+        server: 'https://kubernetes.default.svc' # or put In-cluster
+        namespace: pbak
+
+
+
+
