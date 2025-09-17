@@ -5,10 +5,13 @@ metadata:
   namespace: pbak
 spec:
   replicas: 2
+  selector:
+    matchLabels:
+      app: pbak
   template:
     metadata:
       labels:
-        app: pbak-app
+        app: pbak
     spec:
       containers:
         - name: pbak-container
