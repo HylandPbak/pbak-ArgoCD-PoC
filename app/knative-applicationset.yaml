@@ -20,19 +20,17 @@ spec:
       name: '{{.name}}-color'
     spec:
       project: default
-    source:
-      repoURL: https://github.com/HylandPbak/pbak-ArgoCD-PoC.git
-      targetRevision: HEAD
-      path: "colorChart"
-      helm:
-        values: |
-          color: {.color}
-          name: {.name}
-
-  destination:
-    server: 'https://kubernetes.default.svc' # or put In-cluster
-    namespace: pbak
-
+      destination:
+        namespace: pbak
+        server: 'https://kubernetes.default.svc' # or put In-cluster
+      source:
+        repoURL: https://github.com/HylandPbak/pbak-ArgoCD-PoC.git
+        targetRevision: HEAD
+        path: "colorChart"
+        helm:
+          values: |
+            color: {.color}
+            name: {.name}
 
 
 
