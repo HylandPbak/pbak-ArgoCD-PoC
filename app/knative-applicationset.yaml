@@ -32,5 +32,3 @@ spec:
             color: "{{.color}}"
             name: "{{.name}}"
 
-
-
