@@ -29,6 +29,7 @@ spec:
         path: "colorChart"
         helm:
           values: |
-            color: "{{.color}}"
             name: "{{.name}}"
+            value: "{{.color}}"
+
 
