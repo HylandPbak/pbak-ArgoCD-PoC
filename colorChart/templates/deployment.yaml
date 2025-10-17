@@ -39,7 +39,7 @@ spec:
             initialDelaySeconds: {{ .Values.livenessProbe.initialDelaySeconds }}
             periodSeconds: {{ .Values.livenessProbe.periodSeconds }}
           env:
-            - name: COLOR
+            - name: {{ .Values.name }}
               value: {{ .Values.color }}
           resources:
             requests:
