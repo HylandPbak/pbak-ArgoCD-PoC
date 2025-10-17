@@ -21,7 +21,7 @@ spec:
     spec:
       project: default
       destination:
-        namespace: argocd
+        namespace: pbak
         server: 'https://kubernetes.default.svc' # or put In-cluster
       source:
         repoURL: https://github.com/HylandPbak/pbak-ArgoCD-PoC.git
