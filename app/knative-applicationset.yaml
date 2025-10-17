@@ -30,6 +30,6 @@ spec:
         helm:
           values: |
             name: "{{.name}}"
-            value: "{{.color}}"
+            color: "{{.color}}"
 
 
