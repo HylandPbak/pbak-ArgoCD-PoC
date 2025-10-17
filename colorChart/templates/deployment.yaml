@@ -40,7 +40,7 @@ spec:
             periodSeconds: {{ .Values.livenessProbe.periodSeconds }}
           env:
             - name: COLOR
-              value: "{{ .Values.color }}"
+              value: {{ .Values.color }}
           resources:
             requests:
               memory: {{ .Values.resources.requests.memory }}
