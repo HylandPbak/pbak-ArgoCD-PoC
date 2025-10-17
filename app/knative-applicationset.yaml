@@ -11,10 +11,13 @@ spec:
       elements:
       - name: red
         color: '#FF0000'
+        targetPort: 8001
       - name: blue
         color: '#0000FF'
+        targetPort: 8002
       - name: green
         color: '#00FF00'
+        targetPort: 8003
   template:
     metadata:
       name: '{{.name}}-color'
@@ -31,5 +34,7 @@ spec:
           values: |
             name: "{{.name}}"
             color: "{{.color}}"
+            service:
+              targetPort: {{.targetPort}}
 
 
